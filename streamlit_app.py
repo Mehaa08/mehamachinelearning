@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
 import numpy as np
+import altair as alt
+from sklearn.ensemble import RandomForestClassifier
 
 st.title('˚˖𓍢ִ໋🌷͙֒✧˚.🎀༘⋆Meha Machine Learning App')
 
@@ -22,15 +23,12 @@ with st.expander('Data'):
 
 with st.expander('Data visualization'):
     st.write('**Scatter Plot**')
-    scatter_chart = {
-        'mark': {'type': 'circle', 'tooltip': True},
-        'encoding': {
-            'x': {'field': 'bill_length_mm', 'type': 'quantitative'},
-            'y': {'field': 'body_mass_g', 'type': 'quantitative'},
-            'color': {'field': 'species', 'type': 'nominal'}
-        }
-    }
-    st.altair_chart(scatter_chart)
+    scatter_chart = alt.Chart(df).mark_circle().encode(
+        x='bill_length_mm',
+        y='body_mass_g',
+        color='species'
+    ).interactive()
+    st.altair_chart(scatter_chart, use_container_width=True)
 
 # Input features
 with st.sidebar:
