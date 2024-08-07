@@ -1,6 +1,6 @@
 # 📦 Machine Learning App
 ```
-⬆️ (This is my ml app)
+⬆️ (In this app, i have taken penguin dataset and perform a random forest model and also showcase my streamlit knowledge by creating its U-I)
 ```
 
 Description of the app ...
