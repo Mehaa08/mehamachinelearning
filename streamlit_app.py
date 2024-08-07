@@ -12,7 +12,7 @@ with st.expander('Data'):
   a
   st.write('**x**')
   x = a.drp('species',axis = 1)
-  a
+  x
 
   st.write('**y**')
   y = a.species
