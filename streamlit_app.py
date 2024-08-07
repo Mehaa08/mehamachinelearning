@@ -5,7 +5,7 @@ import numpy as np
 
 st.title('˚˖𓍢ִ໋🌷͙֒✧˚.🎀༘⋆Meha Machine Learning App')
 
-st.info('This app builds a ml models')
+st.info('This app builds ml models')
 
 with st.expander('Data'):
     st.write('**Raw Data**')
@@ -22,14 +22,15 @@ with st.expander('Data'):
 
 with st.expander('Data visualization'):
     st.write('**Scatter Plot**')
-    st.write(st._legacy_altair_chart(st.vega_lite_chart(df, {
+    scatter_chart = {
         'mark': {'type': 'circle', 'tooltip': True},
         'encoding': {
             'x': {'field': 'bill_length_mm', 'type': 'quantitative'},
             'y': {'field': 'body_mass_g', 'type': 'quantitative'},
             'color': {'field': 'species', 'type': 'nominal'}
         }
-    })))
+    }
+    st.altair_chart(scatter_chart)
 
 # Input features
 with st.sidebar:
@@ -89,8 +90,7 @@ clf.fit(X, y)
 prediction = clf.predict(input_row)
 prediction_proba = clf.predict_proba(input_row)
 
-df_prediction_proba = pd.DataFrame(prediction_proba)
-df_prediction_proba.columns = ['Adelie', 'Chinstrap', 'Gentoo']
+df_prediction_proba = pd.DataFrame(prediction_proba, columns=['Adelie', 'Chinstrap', 'Gentoo'])
 
 # Display predicted species
 st.subheader('Predicted Species')
