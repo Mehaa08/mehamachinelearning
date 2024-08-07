@@ -9,13 +9,13 @@ st.info('This app builds a ml models')
 with st.expander('Data'):
   st.write('**Raw Data**')
   a = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
-  a
+  st.write(a)
 
   st.write('**X**')
   X = a.drp('species',axis = 1)
-  X
+  st.write(X)
 
   st.write('**y**')
   y = a.species
-  y
+  st.write(y)
 
