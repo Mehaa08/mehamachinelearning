@@ -12,10 +12,10 @@ with st.expander('Data'):
   st.write(a)
 
   st.write('**X**')
-  X = a.drp('species',axis = 1)
-  st.write(X)
+  X = a.drop('species',axis = 1)
+  X
 
   st.write('**y**')
   y = a.species
-  st.write(y)
+  y
 
