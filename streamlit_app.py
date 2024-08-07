@@ -4,7 +4,7 @@ import numpy as np
 import altair as alt
 from sklearn.ensemble import RandomForestClassifier
 
-st.title('˚˖𓍢ִ໋🌷͙֒✧˚.🎀༘⋆Meha Machine Learning App')
+st.title('🐧Pengu App')
 
 st.info('This app builds ml models')
 
